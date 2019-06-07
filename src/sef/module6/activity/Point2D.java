@@ -61,9 +61,7 @@ public interface Point2D {
 	
 	/**
 	 * Set the location to the coordinates specified by he parameters
-	 * 
-	 * @param x coordinate of the point along the x-axis
-	 * @param y coordinate of the point along the y-axis
+	 *
 	 */
 	public void move(double x2, double y2);
 	
@@ -74,6 +72,7 @@ public interface Point2D {
 	 * @param x2 the x-axis delta
 	 * @param y2 the y-axis delta
 	 */
+
 	public void translate(double x2, double y2);
 	
 	/**
