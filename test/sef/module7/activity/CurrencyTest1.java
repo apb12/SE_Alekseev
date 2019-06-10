@@ -9,30 +9,30 @@ import junit.framework.AssertionFailedError;
 import junit.framework.TestCase;
 
 public class CurrencyTest1 extends TestCase {
-	
+
 	Log logger = LogFactory.getLog(this.getClass());
-	
-	public void testCreateCurrency(){
-		try{
-		Denomination d = new DenominationImpl("USD", "U.S. Dollar", "$");
-		Currency c = new CurrencyImpl(25.5f, d);
-		
-		assertEquals(c.getValue(), 25.5f);
-		
-		Denomination temp = c.getDenomination();
-		assertNotSame(d, temp);
-		assertTrue(d.equals(temp));
-		
-		Calendar tempCal = c.getCreateDate();
-		tempCal.set(1977, 8, 13);
-		
-		assertFalse(tempCal.equals(c.getCreateDate()));
-		}catch(AssertionFailedError e){
+
+	public void testCreateCurrency() {
+		try {
+			Denomination d = new DenominationImpl("USD", "U.S. Dollar", "$");
+			Currency c = new CurrencyImpl(25.5f, d);
+
+			assertEquals(c.getValue(), 25.5f);
+
+			Denomination temp = c.getDenomination();
+			assertNotSame(d, temp);
+			assertTrue(d.equals(temp));
+
+			Calendar tempCal = c.getCreateDate();
+			tempCal.set(1977, 8, 13);
+
+			assertFalse(tempCal.equals(c.getCreateDate()));
+		} catch (AssertionFailedError e) {
+			e.printStackTrace();
 			logger.error(sef.module.percentage.Percentage.setFailedCount(1, e.getMessage()));
-			logger.error(sef.module.percentage.Percentage.setFailedCount(true,1));
+			logger.error(sef.module.percentage.Percentage.setFailedCount(true, 1));
 		}
 	}
 
-	
 
 }
