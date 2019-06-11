@@ -42,6 +42,7 @@ public class RadarContactTest1 extends TestCase {
 		assertEquals(5.3f, (float)r5.getBearing());
 		assertEquals(0.0, r5.getDistance());
 		}catch(AssertionFailedError e){
+			e.getStackTrace();
 			logger.error(sef.module.percentage.Percentage.setFailedCount(1, e.getMessage()));
 			fail();
 		}
@@ -81,6 +82,7 @@ public void testRadarContactNegativeBearing(){
 		assertEquals(358.5, r5.getBearing());
 		assertEquals(0.0, r5.getDistance());
 		}catch(AssertionFailedError e){
+			e.getStackTrace();
 			logger.error(sef.module.percentage.Percentage.setFailedCount(1, e.getMessage()));
 			logger.error(sef.module.percentage.Percentage.setFailedCount(true,2));
 		}

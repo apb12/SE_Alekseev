@@ -52,6 +52,7 @@ public class RadarTest1 extends TestCase{
 			assertNull(r.removeContact(r2.getContactID()));
 			assertEquals(2, r.getContactCount());
 			}catch(AssertionFailedError e){
+				e.getStackTrace();
 				logger.error(sef.module.percentage.Percentage.setFailedCount(1, e.getMessage()));
 				fail();
 			}
@@ -80,6 +81,7 @@ public class RadarTest1 extends TestCase{
 			assertEquals(3, r.getContactCount());
 			assertSame(r1, r.getContact(r1.getContactID()));
 			}catch(AssertionFailedError e){
+				e.getStackTrace();
 				logger.error(sef.module.percentage.Percentage.setFailedCount(1, e.getMessage()));
 				fail();
 			}
