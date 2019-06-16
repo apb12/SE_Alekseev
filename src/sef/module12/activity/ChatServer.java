@@ -44,10 +44,10 @@ public class ChatServer {
 			try{
 				if(out != null)
 					out.close();
-				
+
 				if (client != null)
 					client.close();
-				
+
 				if (server != null)
 					server.close();
 			} catch(IOException ex){
