@@ -79,7 +79,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
 		try {
 			PreparedStatement pStmt = conn
 					.prepareStatement("select p.* from Project p join Employee_Project_Map epm on " + 
-									  "p.ID = epm.PROJECTID where epm.EMPLOYEEID = ? order by p.ID ASC");
+									  "p.ID = epm.PROJECT_ID where epm.EMPLOYEE_ID = ? order by p.ID ASC");
 			pStmt.setInt(1, employeeID);
 
 			ResultSet rs = pStmt.executeQuery();
@@ -107,7 +107,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
 		
 		try {
 			PreparedStatement pStmt = conn
-					.prepareStatement("insert into project (NAME, DESCRIPTION) VALUES (?,?)");
+					.prepareStatement("insert into project (ID,NAME, DESCRIPTION) VALUES (PROJECT_SEQ.NEXTVAL,?,?)");
 
 			pStmt.setString(1, project.getProjectName());
 			pStmt.setString(2, project.getProjectDescription());
